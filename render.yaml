@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: cash-clash-server
+    runtime: node
+    rootDir: server
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /health
+    envVars:
+      - key: NODE_VERSION
+        value: 20
+      - key: CLIENT_ORIGIN
+        sync: false
+      - key: REDIS_URL
+        sync: false
+      - key: DATABASE_URL
+        sync: false
